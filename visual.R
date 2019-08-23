@@ -3,8 +3,6 @@ require(gplots)
 require(corrplot)
 require(tidyverse)
 
-# Heatmaps
-
 heatmap.cor.simp <- function(df, palette){
   df %>%
     keep(is.numeric) %>%
@@ -16,6 +14,19 @@ heatmap.cor.simp <- function(df, palette){
               symkey = T, symbreaks = T, scale = 'none',
               key = T)
 }
+
+#' Create Correlation Heatmap
+#' 
+#' @description
+#' Creates a heatmap of correlation between all numeric
+#' data features of a data.frame. Color set is diverging
+#' and correlations are displayed to 2 decimal places.
+#' NAs are auto dropped 
+#' and non-numeric columns are auto excluded. Requires
+#' tidyverse and corrplot.
+#'
+#' @param df Container: data.frame or tibble
+#' 
 
 heatmap.cor.lab <- function(df){
   df %>%
@@ -75,7 +86,8 @@ basic.fit.plots <- function(model) {
 	       x = 'Residuals',
 	       y = 'Count')
 
-	# create scatter plot of residuals vs predicted values
+	# create scatter plot of residuals vs
+        # predicted values
 	resid.vs.pred <- fit.data %>% 
 	  ggplot(aes(x = Predicted, y = Resid)) +
 	  geom_point() +
