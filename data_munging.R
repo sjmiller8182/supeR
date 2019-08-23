@@ -1,3 +1,11 @@
+# This file contains functions for working with data
+
+# imports
+
+require(Hmisc)
+
+# functions
+
 #' Flattens a correlation and p-value matrix
 #' 
 #' @description
