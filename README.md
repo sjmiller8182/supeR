@@ -14,3 +14,9 @@ Useful R support functions
   * Contains:
     * **flattenCorrMatrix**: Flattens a correlation and p-value matrix
     * **get.dummies**: Creates dummy variables (columns) for given column
+* **performance.R**: functions for assessing performance of models
+  * No library dependance
+  * Contains:
+    * **PRESS**: Calculate PRESS Score
+    * **PRESS.cv**: Calculates PRESS from `caret` CV model
+    * **MSE**: Calculate MSE Score
