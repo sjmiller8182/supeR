@@ -1,7 +1,14 @@
 
+# This file contains functions for generating visuals.
+
+# imports
+
 require(gplots)
 require(corrplot)
 require(tidyverse)
+require(gridExtra)
+
+# functions
 
 heatmap.cor.simp <- function(df, palette){
   df %>%
@@ -52,10 +59,6 @@ heatmap.cor.lab <- function(df){
 #' 
 
 basic.fit.plots <- function(model) {
-	
-	# depends on
-	require(tidyverse)
-	require(gridExtra)
   
 	# get predicted values
 	Predicted <- model$fitted.values
@@ -63,7 +66,7 @@ basic.fit.plots <- function(model) {
 	Resid <- model$residuals
 	# get studentized residuals
 	RStudent <- rstudent(model = model)
-  # build out a data container from the model
+        # build out a data container from the model
 	fit.data = data.frame(
 	  'Resid' = Resid,
 	  'RStudent' = RStudent,
